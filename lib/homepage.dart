@@ -6,53 +6,50 @@ import 'package:database_saple/serch.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({ Key? key }) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Student Registraion From',),
+        title: const Text(
+          'Student Registraion From',
+        ),
         actions: [
-          IconButton(onPressed: (){
-                 showSearch(context: context, delegate: SerchClass());
-
-          }, icon: const Icon(Icons.search))
+          IconButton(
+              onPressed: () {
+                showSearch(context: context, delegate: SerchClass());
+              },
+              icon: const Icon(Icons.search))
         ],
-
       ),
-      body: SafeArea(child: Column (
-        
+      body: SafeArea(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          //halooooo...............
 
-        
-         mainAxisAlignment: MainAxisAlignment.center,
-        children:  [       
-
-
-
-
-        
-
-           SizedBox(
-            
+          SizedBox(
             width: 500,
-            child: ElevatedButton(onPressed: (){
-               Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) => const AddSudentWidget() ));
-            }, child: const Text("Add Student")),
-             
-           ),
-           SizedBox(
-            
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (ctx) => const AddSudentWidget()));
+                },
+                child: const Text("Add Student")),
+          ),
+          SizedBox(
             width: 500,
-            child: ElevatedButton(onPressed: (){
-               Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) => const ListStudentWidget() ));
-            }, child: const Text("Show StudentList")),
-             
-           ),
-        
-      ],)),
-      
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (ctx) => const ListStudentWidget()));
+                },
+                child: const Text("Show StudentList")),
+          ),
+        ],
+      )),
     );
   }
 }
